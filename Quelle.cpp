@@ -6,7 +6,7 @@
 #include<allegro5\allegro_image.h>
 #include<vector>
 
-#define FOV	((PI/2)*0.8) //(vertical not horizontal)
+#define FOV	(PI/2) //90 degrees Field Of View(vertical not horizontal)
 
 #define SCREEN_WIDTH	(100 * 16)
 #define SCREEN_HEIGHT	(100 * 9)
