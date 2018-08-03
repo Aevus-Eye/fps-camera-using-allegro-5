@@ -4,8 +4,6 @@
 #include<allegro5\allegro_color.h>
 #include<allegro5\allegro_primitives.h>
 #include<allegro5\allegro_image.h>
-#define NO_NICE_BOOL
-#include"../../../librarys/nice_stuff/nice.h"
 #include<vector>
 
 #define FOV	((PI/2)*0.8) //(vertical not horizontal)
@@ -15,6 +13,8 @@
 
 #define MOVE_SPEED	.03
 #define MOUSE_SPEED	500. //higher = lower speed
+
+#define LOOP(var,max)	for(var=0;var<max;++var)
 
 class mouse_t {
 public:
@@ -159,7 +159,7 @@ int main() {
 	al_register_event_source(q, al_get_display_event_source(display));
 	al_register_event_source(q, al_get_keyboard_event_source());
 	al_start_timer(fps);
-	auto image = al_load_bitmap("images/ground.jpeg");//random picture of some ground
+	auto image = al_load_bitmap("images/test_image.jpeg");
 	al_set_mouse_xy(display, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	ALLEGRO_VERTEX cube[] = {
 	{-1.0f,-1.0f,-1.0f,  0,0,al_map_rgb_f(1,1,1)},
