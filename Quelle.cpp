@@ -260,14 +260,13 @@ int main() {
 
 			//draw 3d things
 			mesh.draw();
-			ALLEGRO_TRANSFORM transform;
-			al_identity_transform(&transform);
-			al_translate_transform_3d(&transform, 0, -3, 0);
-			
-			al_compose_transform(&transform, &cam);
-			al_use_transform(&transform);
-
-			al_draw_prim(cube, NULL, NULL, 0, std::size(cube), ALLEGRO_PRIM_TRIANGLE_LIST);
+			//draw things that arent in the mesh. you can also draw 2d primitives
+			al_identity_transform(&tra);
+			al_translate_transform_3d(&tra, 0, -3, 0);
+			al_compose_transform(&tra, &cam);
+			al_use_transform(&tra);
+			//al_draw_prim(cube, NULL, NULL, 0, std::size(cube), ALLEGRO_PRIM_TRIANGLE_LIST);
+			al_draw_filled_circle(0, 0, 1, al_map_rgba_f(0,1,0.5,0.5));//this circle will always be pixel perfect, no matter how far you zoom in
 
 			//restore projection
 			al_identity_transform(&tra);
